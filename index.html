@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicio 05</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ecf0f1;
+        }
+
+        header {
+            color: #2b0b55;
+            background: #ffffff;
+            text-align: left;
+            font: bold 25px Arial;
+            padding: 20px 20px 20px 50px;
+            margin-bottom: 20px;
+            border-bottom: solid 3px #2b0b55;
+        }
+
+        section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            width: 550px;
+            text-align: left;
+            font: normal 18px Arial;
+            margin: auto;
+        }
+
+        h1 {
+            color: #2b0b55;
+            border-bottom: solid 3px #2b0b55;
+            padding: 10px 10px 15px 10px;
+        }
+
+        div {
+            margin-top: 10px;
+            display: flow-root;
+        }
+
+        input{
+            display: block;
+            outline: none;
+        }
+
+        label {
+            padding: 10px 10px 15px 10px;
+            display: block;
+            outline: none;
+        }
+
+        .espaco {
+            padding: 10px;
+            width: 500px;
+            margin: auto;
+            border: solid 1px rgb(211, 208, 208);
+            transition: 500ms;
+        }
+
+        ::placeholder {
+            color: #636e72;
+            font-weight: bold;
+        }
+
+        .botao {
+            cursor: pointer;
+            padding: 7px;
+            margin-top: 15px;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            font: bold 12px Arial;
+            width: 200px;
+            outline: none;
+        }
+
+        .botao:hover {
+            box-shadow: 1px 1px 1px #222;
+        }
+
+        #buttoncancelar {
+            float: left;
+            margin-left: 50px;
+            background: #323536;
+        }
+        
+        #buttonsalvar {
+            float: right;
+            margin-right: 50px;
+            background: #1f990d;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            SISTEMA DE COMPRAS
+        </header>
+    <section>
+        <h1>Cliente</h1>
+        <form>
+            <div>
+                <label>Nome:</label>
+                <input type="text" name="nome" id="nome" class="espaco borda" placeholder="ex: Pedro, Maria, etc.">
+            </div>
+            <div>
+                <label>Data de nascimento:</label>
+                <input type="date" name="dataNascimento" id="dataNascimento" class="espaco borda">
+            </div>
+            <div>
+                <label>E-mail:</label>
+                <input type="text" name="email" id="email" class="espaco borda" placeholder="ex: maria@maria.com.br">
+            </div>
+            <div>
+                <label>telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="espaco borda" placeholder="ex: (48) 99999-1234">
+            </div>
+            <div>
+                <input id="buttoncancelar" class="botao" type="reset" value="Cancelar">
+                <input id="buttonsalvar" class="botao" type="button" value="Salvar" onclick="salvar()">
+            </div>
+        </form>
+    </section>
+        </form>
+
+        <script>
+            function salvar() {
+                let nome = document.querySelector('input#nome').value;
+                let dataNascimento = document.querySelector('input#dataNascimento').value;
+                let email = document.querySelector('input#email').value;
+                let telefone = document.querySelector('input#telefone').value;
+
+                if (nome.length == 0 || dataNascimento.length == 0 || email.length == 0 || telefone.length == 0) {
+                    alert('Preencha os campos corretamente!');
+                }
+                else {
+                    console.log(`Nome: ${nome}`);
+                    console.log(`Data de nascimento: ${dataNascimento}`);
+                    console.log(`E-mail: ${email}`);
+                    console.log(`telefone: ${telefone}`);
+                    alert('Cadastro concluido com sucesso')
+                }
+            }  
+        </script>
+    </body>
+</html>
